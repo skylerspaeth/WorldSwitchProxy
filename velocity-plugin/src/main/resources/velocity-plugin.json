@@ -1,0 +1,7 @@
+{
+  "id": "worldswitchproxy",
+  "name": "World Switch Proxy",
+  "version": "1.0",
+  "main": "com.skylerspaeth.worldswitchproxy.VelocityPlugin",
+  "authors": ["skylerspaeth"]
+}
