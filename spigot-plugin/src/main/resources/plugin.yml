@@ -1,0 +1,4 @@
+name: SpigotTeleportProxy
+main: com.skylerspaeth.worldswitchproxy.SpigotPlugin
+version: 1.0
+api-version: 1.16
