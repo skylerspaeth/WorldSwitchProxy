@@ -30,7 +30,7 @@ public class SpigotPlugin extends JavaPlugin implements Listener {
   public void onInventoryClick(InventoryClickEvent event) {
     if (event.getCurrentItem() != null) {
 
-      if (ChatColor.stripColor(event.getView().getTitle()).equals("Teleporter")) {
+      if (ChatColor.stripColor(event.getView().getTitle()).equals("Server Selector")) {
         event.setCancelled(true);
 
         ItemStack item = event.getCurrentItem();
