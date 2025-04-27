@@ -42,18 +42,19 @@ public class VelocityPlugin {
 
     try {
       String subchannel = in.readUTF();
-      if (!subchannel.equals("teleport")) return;
+      if (!subchannel.equals("switchserver")) return;
 
       String uuid = in.readUTF();
       String targetServer = in.readUTF();
 
       logger.info(String.format("received request to send player with UUID '%s' to server '%s'", uuid, targetServer));
       Optional<Player> playerMatchingUuid = server.getPlayer(UUID.fromString(uuid));
+
       if (playerMatchingUuid.isPresent()) {
-        Player player = playerMatchingUuid.get();
-        logger.info(String.format("attempting transfer of user '%s' to server '%s'", player.getUsername(), targetServer));
+        Player activePlayer = playerMatchingUuid.get();
+        logger.info(String.format("attempting transfer of user '%s' to server '%s'", activePlayer.getUsername(), targetServer));
         server.getServer(targetServer).ifPresent(target -> {
-          player.createConnectionRequest(target).fireAndForget();
+          activePlayer.createConnectionRequest(target).fireAndForget();
         });
       }
     } catch (Exception e) {

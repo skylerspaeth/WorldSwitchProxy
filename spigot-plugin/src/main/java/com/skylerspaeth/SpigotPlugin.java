@@ -52,7 +52,7 @@ public class SpigotPlugin extends JavaPlugin implements Listener {
       ByteArrayOutputStream out = new ByteArrayOutputStream();
       DataOutputStream dataOut = new DataOutputStream(out);
 
-      dataOut.writeUTF("teleport");
+      dataOut.writeUTF("switchserver");
       dataOut.writeUTF(player.getUniqueId().toString());
       dataOut.writeUTF(targetServer);
 
